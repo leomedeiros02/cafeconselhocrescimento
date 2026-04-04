@@ -9,12 +9,13 @@ body {
   align-items: center;
 
   height: 100vh;
+  padding-top: 40px;
   text-align: center;
 }
 
 /* Container */
 .container {
-  padding: 20px;
+  padding: 10px;
   max-width: 90%;
 }
 
@@ -28,8 +29,8 @@ body {
 /* Frase */
 #frase {
   font-size: 22px;
-  line-height: 1.6;
-  margin-bottom: 30px;
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 
 /* Linha dourada */
@@ -37,7 +38,7 @@ body {
   width: 60px;
   height: 3px;
   background-color: #d4a055;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 /* Autor */
