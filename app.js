@@ -1,7 +1,7 @@
 let frases = [];
 
 fetch("phrases.json")
-  .then(res => res.json())
+  .then(response => response.json())
   .then(data => {
     frases = data;
     fraseDoDia();
@@ -10,23 +10,16 @@ fetch("phrases.json")
 function fraseDoDia() {
   const hoje = new Date();
 
-  // 📅 Calcula o dia do ano
   const inicioAno = new Date(hoje.getFullYear(), 0, 0);
   const diff = hoje - inicioAno;
   const umDia = 1000 * 60 * 60 * 24;
   const diaDoAno = Math.floor(diff / umDia);
 
-  // 🔁 Seleciona a frase do dia
   const index = diaDoAno % frases.length;
-  const frase = frases[index];
+  const fraseCompleta = frases[index];
 
-  document.getElementById("frase").innerText = frase;
+  const partes = fraseCompleta.split(" — ");
 
-  mudarCor(index);
-}
-
-
-  const cores = ["#ff6b6b", "#6bcB77", "#4d96ff", "#ffd93d"];
-  document.body.style.background = cores[index % cores.length];
-fraseDoDia();
+  document.getElementById("frase").innerText = partes[0];
+  document.getElementById("autor").innerText = partes[1] || "";
 }
