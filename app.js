@@ -4,10 +4,10 @@ fetch("phrases.json")
   .then(response => response.json())
   .then(data => {
     frases = data;
-    fraseDoDia();
+    mostrarFrase();
   });
 
-function fraseDoDia() {
+function mostrarFrase() {
   const hoje = new Date();
 
   const inicioAno = new Date(hoje.getFullYear(), 0, 0);
