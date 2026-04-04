@@ -28,4 +28,5 @@ function fraseDoDia() {
 
   const cores = ["#ff6b6b", "#6bcB77", "#4d96ff", "#ffd93d"];
   document.body.style.background = cores[index % cores.length];
+fraseDoDia();
 }
