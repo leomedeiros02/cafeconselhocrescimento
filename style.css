@@ -1,4 +1,5 @@
 body {
+  body {
   margin: 0;
   background-color: #000;
   color: #fff;
@@ -6,48 +7,45 @@ body {
 
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* IMPORTANTE */
+  align-items: center; /* volta para o centro */
 
   min-height: 100vh;
-  padding-top: 80px; /* sobe o conteúdo */
   text-align: center;
 }
-
 /* Container */
 .container {
-  padding: 10px;
+  padding: 15px;
   max-width: 90%;
 }
-
 /* Aspas */
 .aspas {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-/* Frase */
-#frase {
-  font-size: 26px;
-  line-height: 1.4;
+  font-size: 60px;
+  color: #d4a055; /* dourado */
   margin-bottom: 15px;
-  padding: 0 10px;
 }
 
-/* Linha dourada */
 .linha {
- margin: 10px auto;
+  width: 60px;
+  height: 3px;
+  background-color: #d4a055; /* dourado */
+  margin: 15px auto;
 }
-
 /* Autor */
 #autor {
-   font-size: 13px;
+  font-size: 14px;
   margin-top: 10px;
+  opacity: 0.7;
 }
 
 /* 📱 Ajuste para celular */
 @media (min-width: 768px) {
   #frase {
-    font-size: 32px;
-  }
+    #frase {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
 
   .aspas {
     font-size: 80px;
