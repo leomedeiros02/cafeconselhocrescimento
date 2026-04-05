@@ -40,5 +40,23 @@ function configurarCompartilhamento(frase, autor) {
   document.getElementById("instagram").onclick = () => {
     alert("Instagram não permite compartilhamento direto. Use salvar imagem 👊");
   };
+  document.getElementById("salvar").onclick = () => {
+
+  const container = document.querySelector(".container");
+  const share = document.querySelector(".share");
+
+  // esconder ícones antes da captura
+  share.style.display = "none";
+
+  html2canvas(container).then(canvas => {
+    const link = document.createElement("a");
+    link.download = "conselho.png";
+    link.href = canvas.toDataURL();
+    link.click();
+
+    // mostrar de novo
+    share.style.display = "block";
+  });
+};
 }
 
