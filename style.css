@@ -10,6 +10,7 @@ body {
   font-family: 'Playfair Display', serif;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -17,28 +18,24 @@ body {
   text-align: center;
 }
 
-/* Container */
 .container {
   max-width: 90%;
   padding: 20px;
 }
 
-/* Aspas */
 .aspas {
   font-size: 50px;
   color: #d4a055;
   margin-bottom: 10px;
 }
 
-/* Frase */
 #frase {
-  font-size: 24px;
-  line-height: 1.5;
-  margin-bottom: 20px;
+  font-size: 26px;
+  line-height: 1.4;
+  margin-bottom: 15px;
   padding: 0 10px;
 }
 
-/* Linha */
 .linha {
   width: 50px;
   height: 2px;
@@ -46,34 +43,20 @@ body {
   margin: 15px auto;
 }
 
-/* Autor */
 #autor {
   font-size: 14px;
   opacity: 0.7;
 }
 
-/* Rodapé */
 .footer {
   margin-top: 30px;
   font-size: 13px;
   opacity: 0.6;
 }
 
-/* 📱 Ajuste para telas maiores */
-@media (min-width: 768px) {
-  #frase {
-    font-size: 30px;
-  }
-
-  .aspas {
-    font-size: 70px;
-    
-  }
- .share {
-  margin-top: 100px; /* mais afastado */
-  text-align: center;
+.share {
+  margin-top: 100px;
 }
-
 
 .share-text {
   font-size: 12px;
@@ -83,18 +66,11 @@ body {
 
 .icons {
   display: flex;
+  gap: 35px;
   justify-content: center;
-  gap: 35px; /* mais espaço entre ícones */
 }
 
 .icons i {
   font-size: 24px;
   color: #d4a055;
-  transition: 0.3s;
-}
-
-.icons i:hover {
-  transform: scale(1.2);
-  opacity: 0.8;
-}
 }
