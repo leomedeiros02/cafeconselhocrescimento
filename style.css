@@ -22,7 +22,9 @@ body {
 .container {
   width: 100%;
   max-width: 350px;
-  padding: 20px;
+  padding: 30px 20px;
+
+  background-color: #000; /* ESSENCIAL */
 }
 
 /* ASPAS */
