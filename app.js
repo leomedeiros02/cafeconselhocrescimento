@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("frase").innerText = frase;
       document.getElementById("autor").innerText = autor;
 
-      configurarCompartilhamento(frase, autor);
+      configurarCompartilhamento();
 
     })
     .catch(() => {
@@ -28,26 +28,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-function configurarCompartilhamento(frase, autor) {
+function configurarCompartilhamento() {
 
-  const texto = `${frase} — ${autor}`;
-  const url = window.location.href;
+  const botoes = ["whatsapp", "telegram", "facebook"];
 
-  const textoFinal = encodeURIComponent(texto + " " + url);
+  botoes.forEach(id => {
+    document.getElementById(id).onclick = compartilharImagem;
+  });
 
-  document.getElementById("whatsapp").onclick = () => {
-    window.open(`https://api.whatsapp.com/send?text=${textoFinal}`, "_blank");
-  };
+  document.getElementById("salvar").onclick = compartilharImagem;
+}
 
-  document.getElementById("telegram").onclick = () => {
-    window.open(`https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(texto)}`, "_blank");
-  };
-
-  document.getElementById("facebook").onclick = () => {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, "_blank");
-  };
-
-  document.getElementById("salvar").onclick = async () => {
+async function compartilharImagem() {
 
   const conteudo = document.getElementById("conteudo");
   const share = document.querySelector(".share");
@@ -65,14 +57,12 @@ function configurarCompartilhamento(frase, autor) {
 
     const file = new File([blob], "conselho.png", { type: "image/png" });
 
-    // Tenta abrir o menu de compartilhamento do celular
     if (navigator.share && navigator.canShare({ files: [file] })) {
       await navigator.share({
         files: [file],
         title: "Conselho do dia"
       });
     } else {
-      // fallback (salvar imagem)
       const link = document.createElement("a");
       link.href = canvas.toDataURL();
       link.download = "conselho.png";
@@ -81,5 +71,4 @@ function configurarCompartilhamento(frase, autor) {
 
   });
 
-};
 }
