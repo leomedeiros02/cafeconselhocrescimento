@@ -77,7 +77,7 @@ async function compartilharImagem() {
   // marca
   ctx.fillStyle = "#555";
   ctx.font = "20px serif";
-  ctx.fillText("Café com Conselho", 540, 950);
+  ctx.fillText("Café, Conselho e Crescimento", 540, 950);
 
   canvas.toBlob(async (blob) => {
 
